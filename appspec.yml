@@ -1,0 +1,10 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-1:860061945305:task-definition/severity8200-task:1"
+        LoadBalancerInfo:
+          ContainerName: "audit-severity8200-repo"
+          ContainerPort: "8300"
+        PlatformVersion: "LATEST"
